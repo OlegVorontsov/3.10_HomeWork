@@ -28,26 +28,41 @@ namespace _3._10._2
                 Console.WriteLine($"Карта {i}: ");
                 var temp = Console.ReadLine();
 
-                switch (temp)
+                if (int.TryParse(temp, out int tryNumber))
                 {
-                    case "J":
-                        sum += 10;
-                        break;
-                    case "Q":
-                        sum += 10;
-                        break;
-                    case "K":
-                        sum += 10;
-                        break;
-                    case "T":
-                        sum += 10;
-                        break;
-                    default:
-                        sum += int.Parse(temp);
-                        break;
+                    if (tryNumber < 2 || tryNumber > 10)
+                    {
+                        Console.WriteLine("Такой карты не бывает!");
+                        i--;
+                    }
+                    else
+                    {
+                        sum += tryNumber;
+                    }
+                }
+                else
+                {
+                    switch (temp)
+                    {
+                        case "J":
+                            sum += 10;
+                            break;
+                        case "Q":
+                            sum += 10;
+                            break;
+                        case "K":
+                            sum += 10;
+                            break;
+                        case "T":
+                            sum += 10;
+                            break;
+                        default:
+                            Console.WriteLine("Такой карты не бывает!");
+                            i--;
+                            break;
+                    }
                 }
             }
-
             Console.WriteLine($"Сумма твоих карт: {sum}");
 
             Console.ReadLine();
