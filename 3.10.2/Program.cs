@@ -27,40 +27,51 @@ namespace _3._10._2
             {
                 Console.WriteLine($"Карта {i}: ");
                 var temp = Console.ReadLine();
-
-                if (int.TryParse(temp, out int tryNumber))
+                switch (temp)
                 {
-                    if (tryNumber < 2 || tryNumber > 10)
-                    {
+                    case "J":
+                        sum += 10;
+                        break;
+                    case "Q":
+                        sum += 10;
+                        break;
+                    case "K":
+                        sum += 10;
+                        break;
+                    case "T":
+                        sum += 10;
+                        break;
+                    case "2":
+                        sum += 2;
+                        break;
+                    case "3":
+                        sum += 3;
+                        break;
+                    case "4":
+                        sum += 4;
+                        break;
+                    case "5":
+                        sum += 5;
+                        break;
+                    case "6":
+                        sum += 6;
+                        break;
+                    case "7":
+                        sum += 7;
+                        break;
+                    case "8":
+                        sum += 8;
+                        break;
+                    case "9":
+                        sum += 9;
+                        break;
+                    case "10":
+                        sum += 10;
+                        break;
+                    default:
                         Console.WriteLine("Такой карты не бывает!");
                         i--;
-                    }
-                    else
-                    {
-                        sum += tryNumber;
-                    }
-                }
-                else
-                {
-                    switch (temp)
-                    {
-                        case "J":
-                            sum += 10;
-                            break;
-                        case "Q":
-                            sum += 10;
-                            break;
-                        case "K":
-                            sum += 10;
-                            break;
-                        case "T":
-                            sum += 10;
-                            break;
-                        default:
-                            Console.WriteLine("Такой карты не бывает!");
-                            i--;
-                            break;
-                    }
+                        break;
                 }
             }
             Console.WriteLine($"Сумма твоих карт: {sum}");
